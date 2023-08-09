@@ -15,8 +15,18 @@
                 email: email,
             },
             type: 'POST',
-            success: (json) => {
-                console.log("res")
+            success: (res) => {
+                console.log(res)
+                Swal.fire({
+                    title: 'OK',
+                    text: "Tu registro ha sido actualizado!",
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "/read"
+                    }
+                })
             },
             error: (jqXHR, status, error) => {
                 alert('Disculpe, existió un problema');
