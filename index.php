@@ -13,17 +13,17 @@
 <body class="bg-dark text-light">
 
   <?php
-  require_once "./app/db/crud.class.php";
+  require_once "./app/model/crud.class.php";
   $conexion = new Crud();
 
   if (isset($_GET['view'])) {
     switch ($_GET['view']) {
+      case 'create':
+        require_once './app/views/create.php';
+        break;
       case 'read':
         $datos = $conexion->mostrar();
         require_once './app/views/read.php';
-        break;
-      case 'create':
-        require_once './app/views/create.php';
         break;
       case 'update':
         $datos = $conexion->buscar($_REQUEST["id"]);
@@ -31,18 +31,16 @@
         break;
       case 'delete':
         $eliminar = $conexion->eliminar($_REQUEST['id']);
-        header('location: ./index.php?view=read');
+        header('location: /read');
         break;
       default:
-        header('location index.php?view=read');
+        header('location: /read');
         break;
     }
   } else {
     include_once './app/views/home.php';
   }
   ?>
-
-  
 </body>
 
 </html>

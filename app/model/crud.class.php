@@ -11,9 +11,10 @@
         }
 
         public function mostrar() {
-            $query = $this->conexion->prepare('SELECT * FROM persona');
-            $query->execute();
-            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            $query = 'SELECT * FROM persona';
+            $stmt = $this->conexion->prepare($query);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             unset($this->conexion);
             return $result;
         }

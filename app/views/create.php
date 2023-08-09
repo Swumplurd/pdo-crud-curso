@@ -7,7 +7,7 @@
                     <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" aria-describedby="helpId">
                 </div>
                 <div class="mb-3">
-                    <label for="telefono">telefono</label>
+                    <label for="telefono">Teléfono</label>
                     <input type="text" name="telefono" id="telefono" class="form-control" placeholder="Telefono" aria-describedby="helpId">
                 </div>
             </div>
@@ -22,49 +22,6 @@
     </div>
 </div>
 
-<script>
-    /* $.ajax({
-        url: './app/db/crud.class.php',
-        data: {
-            id: 123
-        },
-        type: 'GET',
-        dataType: 'json',
-        success: (json) => {
-            $('<h1/>').text(json.title).appendTo('body');
-            $('<div class="content"/>')
-                .html(json.html).appendTo('body');
-        },
-        error: (jqXHR, status, error) => {
-            alert('Disculpe, existió un problema');
-        },
-        complete: (jqXHR, status) => {
-            alert('Petición realizada');
-        }
-    }); */
-
-    $("#agregar").click(() => {
-        let nombre = $("#nombre").val()
-        let telefono = $("#telefono").val()
-        let email = $("#email").val()
-
-        $.ajax({
-            url: './app/db/process/create.php',
-            data: {
-                nombre: nombre,
-                telefono: telefono,
-                email: email,
-            },
-            type: 'POST',
-            success: (json) => {
-                console.log(json)
-            },
-            error: (jqXHR, status, error) => {
-                alert('Disculpe, existió un problema');
-            },
-            complete: (jqXHR, status) => {
-                alert('Petición realizada');
-            }
-        })
-    })
-</script>
+<?php
+    require_once("./app/controller/create.php")
+?>

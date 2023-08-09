@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col d-flex justify-content-center">
-            <a id="agregar" class="btn btn-success btn-block my-4" href="index.php?view=create">Añadir</a>
+            <a id="agregar" class="btn btn-success btn-block my-4" href="/create">Añadir</a>
         </div>
     </div>
     <div class="row">
@@ -24,8 +24,8 @@
                             <td><?php echo $dato['nombre'] ?></td>
                             <td><?php echo $dato['telefono'] ?></td>
                             <td><?php echo $dato['email'] ?></td>
-                            <td><a href="index.php?view=update&id=<?php echo $dato['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen"></i>Actualizar</a></td>
-                            <td><a href="index.php?view=delete&id=<?php echo $dato['id'] ?>" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i>Eliminar</a></td>
+                            <td><a href="/update&id=<?php echo $dato['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen"></i>Actualizar</a></td>
+                            <td><a href="/delete&id=<?php echo $dato['id'] ?>" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i>Eliminar</a></td>
                         </tr>
                     <?php
                     endforeach;
