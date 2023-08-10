@@ -56,12 +56,6 @@
             confirmButtonText: 'Borralo'
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire({
-                    title: 'Borrado!',
-                    text: 'El registro ha sido borrado',
-                    icon: 'success',
-                    timer: 1500
-                })
                 window.location.href = `/delete&id=${id}`
             }
         })
