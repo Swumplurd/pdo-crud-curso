@@ -1,6 +1,5 @@
 <script>
     $("#actualizar").click(() => {
-        console.log("click")
         let id = $("#id").val()
         let nombre = $("#nombre").val()
         let telefono = $("#telefono").val()
@@ -15,8 +14,7 @@
                 email: email,
             },
             type: 'POST',
-            success: (res) => {
-                console.log(res)
+            success: () => {
                 Swal.fire({
                     title: 'OK',
                     text: "Tu registro ha sido actualizado!",
@@ -29,11 +27,12 @@
                 })
             },
             error: (jqXHR, status, error) => {
-                alert('Disculpe, existió un problema');
+                Swal.fire({
+                    title: 'Error',
+                    text: "Disculpa las molestias, hubo un error.",
+                    icon: 'error',
+                })
             },
-            complete: (jqXHR, status) => {
-                alert('Petición realizada');
-            }
         })
     })
 </script>

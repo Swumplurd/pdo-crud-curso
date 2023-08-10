@@ -12,7 +12,7 @@
                 email: email,
             },
             type: 'POST',
-            success: (json) => {
+            success: () => {
                 Swal.fire({
                     title: 'OK',
                     text: "Tu registro ha sido guardado!",
@@ -25,7 +25,11 @@
                 })
             },
             error: (jqXHR, status, error) => {
-                alert('Disculpe, existió un problema');
+                Swal.fire({
+                    title: 'Error',
+                    text: "Disculpa las molestias, hubo un error.",
+                    icon: 'error',
+                })
             }
         })
     })
